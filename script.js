@@ -79,6 +79,13 @@ function carregar_inicio(){
 function carregar_cartas(){
     conteinergeral.innerHTML = `
         <div class="centro">
+            <div id="chances-display">
+                <div id="chance0" class="chance-conteiner">✸</div>
+                <div id="chance1" class="chance-conteiner">✸</div>
+                <div id="chance2" class="chance-conteiner">✸</div>
+                <div id="chance3" class="chance-conteiner">✸</div>
+                <div id="chance4" class="chance-conteiner">✸</div>
+            <div>
             <div id="conteiner-cartas">
                 <div id="carta" class="carta-virada comum" data-chances="5" data-raridade="0">
 

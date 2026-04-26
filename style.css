@@ -55,7 +55,11 @@ html{ height: 100%; background-color: #405010; color:aliceblue;}
     border-radius: 20px 20px 0px 0px;
     gap: 5%;
     background-color: #0000005e;
-} 
+}
+#chances-display{
+    display: flex; flex-direction: row; align-items: center; justify-content: center;
+    width: 50%;
+}
 
 .carta, .carta-virada{ width: 200%; max-width: 400px; aspect-ratio: 2 / 3; background-color: #88993e; border-radius: 30px;}
 .carta-virada{ font-size: 0;}
