@@ -79,17 +79,16 @@ function carregar_inicio(){
 function carregar_cartas(){
     conteinergeral.innerHTML = `
         <div class="centro">
-            <div id="chances-display">
-                <div id="chance0" class="chance-conteiner">✸</div>
-                <div id="chance1" class="chance-conteiner">✸</div>
-                <div id="chance2" class="chance-conteiner">✸</div>
-                <div id="chance3" class="chance-conteiner">✸</div>
-                <div id="chance4" class="chance-conteiner">✸</div>
-            <div>
             <div id="conteiner-cartas">
+            
                 <div id="carta" class="carta-virada comum" data-chances="5" data-raridade="0">
-
+                
                 </div>
+
+                <div id="chances-display">
+                    ✸ ✸ ✸ ✸ ✸    
+                </div>
+
             </div>
             <div id="rodape-cartas">
                 <button id="btn-rodar-novamente" class="botao-padrao" onclick="carregar_cartas()">Rolar Novamente</button>
@@ -107,6 +106,7 @@ function debug_carta(R, P){
 
 document.addEventListener('click', (e) => {
     const carta = e.target.closest('.carta-virada');
+    const chancesdisplay = document.getElementById('chances-display')
     if (!carta) return;
 
     let chances = parseInt(carta.dataset.chances)
@@ -129,6 +129,7 @@ document.addEventListener('click', (e) => {
 
     let porcentagem = Math.floor(Math.random() * 100) + 1
     const chances_upgrades= [60, 75, 95];
+    const caractereschances = ["🎉🎉🎉🎉🎉","REVELAR!", "✸", "✸ ✸", "✸ ✸ ✸", "✸ ✸ ✸ ✸" ]
     const upgrades = ['comum','rara', 'epica', 'lendaria'];
 
     if (porcentagem >= chances_upgrades[raridade]){
@@ -136,6 +137,10 @@ document.addEventListener('click', (e) => {
         carta.dataset.raridade = raridade;
         carta.classList.add(upgrades[raridade])
     }
+
+    chancesdisplay.innerHTML = `
+        `+ caractereschances[chances] + `
+    `;
 
     carta.dataset.chances = chances - 1;
     debug_carta(raridade, porcentagem)
