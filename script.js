@@ -68,8 +68,8 @@ function carregar_inicio(){
     conteinergeral.innerHTML = `
         <div class="centro-inicio">
             <div class="centro titulo">
-                <p style="font-family: 'Times New Roman', Times, serif; font-size: 500%;">FRACTUM'S LAYER</p>
-                <p style="font-family: 'Times New Roman', Times, serif; font-size: 300%;">CARD'S ROLL</p>
+                <p id="titulo">FRACTUM'S LAYER</p>
+                <p id="sub-titulo">CARD'S ROLL</p>
             </div>
             <button class="botao-padrao" id="btn-cartas" onclick="carregar_cartas()">Roletar</button>
         </div>
